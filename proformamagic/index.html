@@ -222,11 +222,67 @@ footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
 .footer-inner{max-width:1200px;margin:0 auto;padding:0 50px}
 .footer-top{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:48px}
 .footer-subscribe h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:#fff;margin-bottom:14px}
-.subscribe-form{display:flex;gap:0}
+.subscribe-form{display:flex;gap:0;max-width:420px}
 .subscribe-form input{flex:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-right:none;border-radius:30px 0 0 30px;padding:12px 20px;color:#fff;font-size:13px;font-family:'DM Sans',sans-serif;outline:none}
 .subscribe-form input::placeholder{color:rgba(255,255,255,.4)}
 .subscribe-form button{background:var(--gold-btn);border:none;border-radius:0 30px 30px 0;padding:12px 22px;color:#fff;font-weight:600;font-size:13px;cursor:pointer;transition:.2s}
 .subscribe-form button:hover{background:var(--gold-light)}
+/* Flodesk — strip all default styling, recreate pill input+button design */
+#fd-form-6a285a6510a901be6e0f6940,
+#fd-form-6a285a6510a901be6e0f6940 *{background:transparent!important;box-shadow:none!important}
+#fd-form-6a285a6510a901be6e0f6940 .fd-form-content,
+#fd-form-6a285a6510a901be6e0f6940 .fd-form,
+#fd-form-6a285a6510a901be6e0f6940 form{background:transparent!important;padding:0!important;margin:0!important;border:none!important}
+#fd-form-6a285a6510a901be6e0f6940 .fd-form-title,
+#fd-form-6a285a6510a901be6e0f6940 .fd-form-description,
+#fd-form-6a285a6510a901be6e0f6940 .fd-form-img,
+#fd-form-6a285a6510a901be6e0f6940 .fd-footer,
+#fd-form-6a285a6510a901be6e0f6940 .fd-form-check{display:none!important}
+/* Inline pill layout — input + button side by side */
+#fd-form-6a285a6510a901be6e0f6940 .fd-form-fields{display:flex!important;gap:0!important;padding:0!important;margin:0!important}
+#fd-form-6a285a6510a901be6e0f6940 .fd-field-wrapper{flex:1!important;padding:0!important;margin:0!important}
+/* Input */
+#fd-form-6a285a6510a901be6e0f6940 input[type="email"],
+#fd-form-6a285a6510a901be6e0f6940 input[type="text"]{
+  background:rgba(255,255,255,.08)!important;
+  border:1px solid rgba(255,255,255,.15)!important;
+  border-right:none!important;
+  border-radius:30px 0 0 30px!important;
+  padding:12px 20px!important;
+  color:#fff!important;
+  font-size:13px!important;
+  font-family:'DM Sans',sans-serif!important;
+  width:100%!important;
+  box-sizing:border-box!important;
+  outline:none!important;
+  margin:0!important;
+  -webkit-appearance:none!important;
+  appearance:none!important;
+}
+#fd-form-6a285a6510a901be6e0f6940 input::placeholder{color:rgba(255,255,255,.4)!important}
+/* Submit button */
+#fd-form-6a285a6510a901be6e0f6940 button[type="submit"],
+#fd-form-6a285a6510a901be6e0f6940 .fd-btn{
+  background:#C8922A!important;
+  border:none!important;
+  border-radius:0 30px 30px 0!important;
+  -webkit-appearance:none!important;
+  appearance:none!important;
+  padding:12px 22px!important;
+  color:#fff!important;
+  font-weight:600!important;
+  font-size:13px!important;
+  font-family:'DM Sans',sans-serif!important;
+  letter-spacing:.5px!important;
+  cursor:pointer!important;
+  white-space:nowrap!important;
+  flex-shrink:0!important;
+  width:auto!important;
+  margin:0!important;
+  transition:.2s!important;
+}
+#fd-form-6a285a6510a901be6e0f6940 button[type="submit"]:hover,
+#fd-form-6a285a6510a901be6e0f6940 .fd-btn:hover{background:#E8A830!important}
 .footer-right .footer-nav{display:flex;flex-wrap:wrap;gap:20px;margin-bottom:28px}
 .footer-nav a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:.2s}
 .footer-nav a:hover{color:#fff}
@@ -531,10 +587,13 @@ footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
       <div class="footer-subscribe">
         <h3>Stay in the loop</h3>
         <p style="font-size:13px;margin-bottom:18px;color:rgba(255,255,255,.45)">Tips, templates and updates delivered to your inbox — no spam, ever.</p>
+        <!-- Our styled form — triggers hidden Flodesk form on submit -->
         <div class="subscribe-form">
-          <input type="email" placeholder="Enter your email address"/>
-          <button>SUBSCRIBE</button>
+          <input type="email" id="footer-email" placeholder="Enter your email address"/>
+          <button type="button" onclick="submitToFlodesk()">SUBSCRIBE</button>
         </div>
+        <!-- Flodesk form hidden — handles actual submission -->
+        <div id="fd-form-6a285a6510a901be6e0f6940" style="display:none;visibility:hidden;position:absolute;pointer-events:none"></div>
       </div>
       <div class="footer-right">
         <div class="footer-nav">
@@ -583,6 +642,45 @@ function toggleFaq(btn){
   a.classList.toggle('open');
   icon.textContent=a.classList.contains('open')?'−':'+';
 }
+</script>
+
+<!-- Flodesk -->
+<script>
+  (function(w, d, t, h, s, n) {
+    w.FlodeskObject = n;
+    var fn = function() { (w[n].q = w[n].q || []).push(arguments); };
+    w[n] = w[n] || fn;
+    var f = d.getElementsByTagName(t)[0];
+    var v = '?v=' + Math.floor(new Date() / (120 * 1000)) * 120;
+    var sm = d.createElement(t);
+    sm.async = true;
+    sm.type = 'text/javascript';
+    sm.src = h + s + v;
+    f.parentNode.insertBefore(sm, f);
+  })(window, document, 'script', 'https://assets.flodesk.com', '/universal.js', 'fd');
+  window.fd('form', {
+    formId: '6a285a6510a901be6e0f6940',
+    containerEl: '#fd-form-6a285a6510a901be6e0f6940'
+  });
+
+  // Submit our styled form by populating and triggering the hidden Flodesk form
+  function submitToFlodesk() {
+    var email = document.getElementById('footer-email').value;
+    if (!email || !email.includes('@')) {
+      document.getElementById('footer-email').focus();
+      return;
+    }
+    var container = document.getElementById('fd-form-6a285a6510a901be6e0f6940');
+    var fdInput = container.querySelector('input[type="email"]');
+    var fdBtn = container.querySelector('button[type="submit"]');
+    if (fdInput && fdBtn) {
+      fdInput.value = email;
+      fdInput.dispatchEvent(new Event('input', { bubbles: true }));
+      fdBtn.click();
+      document.getElementById('footer-email').value = '';
+      document.getElementById('footer-email').placeholder = 'Thank you for subscribing!';
+    }
+  }
 </script>
 </body>
 </html>
