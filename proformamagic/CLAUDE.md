@@ -134,13 +134,39 @@ All SVG inline icons in footer: Instagram, LinkedIn (mitchgauzas), YouTube, TikT
 - `pricing.html` — PPP currency detection, START FREE TRIAL ✅
 - `referral.html` — info-only (no action buttons on public page) ✅
 - `faq.html` — live search, accordion, 6 categories ✅
-- `video-library.html` — filter tabs, sort, placeholders ✅
+- `video-library.html` — filter tabs (All / Demos / Features), sort, placeholders ✅
+  - **Packs removed** — future filter tab "Classes" to be added when paid training webinars launch
 - `terms.html` — Terms & Conditions + Privacy Policy toggle ✅
 
 ## Pages Pending
 - `features.html` — shell exists, not designed yet
 - `samples.html`
 - `schedule-demo.html`
+
+---
+
+## Dashboard — Presentation Mode (backlog for post-launch)
+
+Add a **Presentation Mode** to the dashboard Q&A / report view page. Mitch will provide dashboard designs before implementation. Full spec already built and tested on the marketing FAQ page — remove it from there when adding to dashboard.
+
+### Behaviour:
+- Button labelled "PRESENTATION MODE" with a monitor icon
+- Entering: hides nav, footer, sidebar, and search bar; FAQ/report content fills the screen cleanly
+- Fixed dark top bar appears with: logo (left), ← question counter → nav (centre), EXIT button (right), keyboard shortcut hint
+- One question/section open at a time with gold highlight border; previous closes automatically
+- Auto-scrolls active item into view
+
+### Keyboard shortcuts:
+- `←` / `→` (or `↑` / `↓`) — navigate questions
+- `Enter` / `Space` — open or close current answer
+- `Esc` — exit presentation mode
+
+### Smart filtering:
+- Respects any active search/category filter — cycles only through visible items
+
+### Use cases:
+- In-person client meetings (share screen / projector)
+- Video calls (screen share)
 
 ---
 
