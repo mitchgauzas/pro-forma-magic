@@ -327,6 +327,7 @@ footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
       <ul style="list-style:none;padding:8px 0">
         <li><button onclick="selectCatFilter('')" style="width:100%;text-align:left;background:none;border:none;padding:11px 20px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);cursor:pointer">All categories</button></li>
         <li><button onclick="selectCatFilter('general')" style="width:100%;text-align:left;background:none;border:none;padding:11px 20px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);cursor:pointer">General</button></li>
+        <li><button onclick="selectCatFilter('usecases')" style="width:100%;text-align:left;background:none;border:none;padding:11px 20px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);cursor:pointer">Who It's For</button></li>
         <li><button onclick="selectCatFilter('pricing')" style="width:100%;text-align:left;background:none;border:none;padding:11px 20px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);cursor:pointer">Pricing &amp; Subscription</button></li>
         <li><button onclick="selectCatFilter('using')" style="width:100%;text-align:left;background:none;border:none;padding:11px 20px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);cursor:pointer">Using the Platform</button></li>
         <li><button onclick="selectCatFilter('reports')" style="width:100%;text-align:left;background:none;border:none;padding:11px 20px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);cursor:pointer">Reports &amp; Data</button></li>
@@ -346,6 +347,7 @@ footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
       <h3>Categories</h3>
       <ul>
         <li><a href="#cat-general" class="active" data-cat="general">General</a></li>
+        <li><a href="#cat-usecases" data-cat="usecases">Who It's For</a></li>
         <li><a href="#cat-pricing" data-cat="pricing">Pricing &amp; Subscription</a></li>
         <li><a href="#cat-using" data-cat="using">Using the Platform</a></li>
         <li><a href="#cat-reports" data-cat="reports">Reports &amp; Data</a></li>
@@ -360,6 +362,7 @@ footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
       <!-- Mobile dropdown -->
       <select class="faq-cat-select" onchange="mobileCatJump(this.value)">
         <option value="general">General</option>
+        <option value="usecases">Who It's For</option>
         <option value="pricing">Pricing &amp; Subscription</option>
         <option value="using">Using the Platform</option>
         <option value="reports">Reports &amp; Data</option>
@@ -390,6 +393,92 @@ footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
             <p>Yes. Pro Forma Magic is available worldwide. Pricing is displayed in your local currency and reflects purchasing power parity, so it's fairly priced relative to your local market.</p>
           </div>
         </div>
+      </div>
+
+      <!-- ── WHO IT'S FOR ── -->
+      <div class="faq-section" id="cat-usecases" data-cat="usecases">
+        <div class="faq-section-title">Who It's For</div>
+
+        <div class="acc-item" data-cat="usecases">
+          <button class="acc-q" onclick="toggleAcc(this)">
+            I'm a buyer — how does Pro Forma Magic help me?
+            <span class="acc-toggle">+</span>
+          </button>
+          <div class="acc-a">
+            <p>Buying a property is one of the largest financial decisions you'll ever make. Pro Forma Magic gives you a clear, complete picture of the numbers before you commit — cash flow projections, mortgage scenarios, cost breakdowns, and return estimates — so you can evaluate any property with confidence, negotiate from a position of knowledge, and avoid surprises after the deal closes.</p>
+          </div>
+        </div>
+
+        <div class="acc-item" data-cat="usecases">
+          <button class="acc-q" onclick="toggleAcc(this)">
+            I'm a seller — how does Pro Forma Magic help me?
+            <span class="acc-toggle">+</span>
+          </button>
+          <div class="acc-a">
+            <p>A well-priced listing backed by data sells faster and at better terms. Pro Forma Magic lets you build a polished financial analysis that clearly demonstrates your property's income potential and investment value — giving serious buyers a compelling, credible reason to move forward at your asking price. It turns a good listing into a persuasive one.</p>
+          </div>
+        </div>
+
+        <div class="acc-item" data-cat="usecases">
+          <button class="acc-q" onclick="toggleAcc(this)">
+            I'm a broker — how does Pro Forma Magic help me?
+            <span class="acc-toggle">+</span>
+          </button>
+          <div class="acc-a">
+            <p>Your clients expect expertise at every step. Pro Forma Magic lets you deliver a professional-grade financial analysis for every property you present — branded with your information, exportable as a polished PDF, and ready to share or present on screen during meetings and video calls. When every touchpoint looks this sharp, you don't just close deals — you build a reputation that generates the next one.</p>
+          </div>
+        </div>
+
+        <div class="acc-item" data-cat="usecases">
+          <button class="acc-q" onclick="toggleAcc(this)">
+            I'm a property manager — how does Pro Forma Magic help me?
+            <span class="acc-toggle">+</span>
+          </button>
+          <div class="acc-a">
+            <p>Managing multiple properties means constantly tracking performance across a portfolio. Pro Forma Magic gives you a structured financial picture of each asset — income, expenses, cash flow, and returns — making it easy to spot underperformers, benchmark against market expectations, and present clear, professional results to property owners. It turns scattered numbers into decisions you can act on.</p>
+          </div>
+        </div>
+
+        <div class="acc-item" data-cat="usecases">
+          <button class="acc-q" onclick="toggleAcc(this)">
+            I'm an appraiser — how does Pro Forma Magic help me?
+            <span class="acc-toggle">+</span>
+          </button>
+          <div class="acc-a">
+            <p>Speed and consistency matter when you're managing a volume of assignments. Pro Forma Magic's structured templates let you organize income, expense, and valuation data efficiently — cutting the time spent on formatting and layout so you can focus on the analysis itself. Every output is clean, professional, and consistent, which reflects well on your practice and the reports you deliver.</p>
+          </div>
+        </div>
+
+        <div class="acc-item" data-cat="usecases">
+          <button class="acc-q" onclick="toggleAcc(this)">
+            I'm an analyst — how does Pro Forma Magic help me?
+            <span class="acc-toggle">+</span>
+          </button>
+          <div class="acc-a">
+            <p>Whether you're screening a single asset or working through a pipeline of opportunities, Pro Forma Magic gives you a consistent, professional framework for every analysis. The platform is flexible enough to produce a quick summary or a detailed deep-dive — so you can move fast on initial reviews and go deep when the deal warrants it. Standardized outputs also make it easy to compare properties and present findings clearly to stakeholders.</p>
+          </div>
+        </div>
+
+        <div class="acc-item" data-cat="usecases">
+          <button class="acc-q" onclick="toggleAcc(this)">
+            I'm a mortgage broker — how does Pro Forma Magic help me?
+            <span class="acc-toggle">+</span>
+          </button>
+          <div class="acc-a">
+            <p>Helping your clients understand the full picture before they sign is what sets you apart. Pro Forma Magic lets you run mortgage scenarios, stress test cash flows at different rate assumptions, and show borrowers exactly how the numbers work on any property — building their confidence and yours. When clients feel informed and well-guided, deals close faster and referrals follow.</p>
+          </div>
+        </div>
+
+        <div class="acc-item" data-cat="usecases">
+          <button class="acc-q" onclick="toggleAcc(this)">
+            I'm an underwriter — how does Pro Forma Magic help me?
+            <span class="acc-toggle">+</span>
+          </button>
+          <div class="acc-a">
+            <p>Evaluating income-producing properties requires structured, reliable data — and that's exactly what Pro Forma Magic produces. Clear cash flow statements, debt service coverage analysis, and detailed income and expense breakdowns give you the information you need to assess deal viability efficiently. Consistent, well-organized reports reduce back-and-forth with borrowers and help you move files through the process with confidence.</p>
+          </div>
+        </div>
+
       </div>
 
       <!-- ── PRICING & SUBSCRIPTION ── -->
@@ -655,7 +744,7 @@ function filterFaq(q){
 function selectCatFilter(cat){
   currentCatFilter=cat;
   var label=document.getElementById('search-cat-label');
-  var labels={'':'All categories','general':'General','pricing':'Pricing & Subscription','using':'Using the Platform','reports':'Reports & Data','security':'Security & Privacy','support':'Support & Resources'};
+  var labels={'':'All categories','general':'General','usecases':'Who It\'s For','pricing':'Pricing & Subscription','using':'Using the Platform','reports':'Reports & Data','security':'Security & Privacy','support':'Support & Resources'};
   label.textContent=labels[cat]||'All categories';
   document.getElementById('cat-dropdown').style.display='none';
   filterFaq(document.getElementById('faq-search').value);
