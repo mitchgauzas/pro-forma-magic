@@ -15,14 +15,14 @@
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
 
 /* ── NAV (transparent → darkens on scroll) ── */
-nav{
+#main-nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
   padding:0 40px;height:70px;
   background:transparent;
   transition:background .35s,box-shadow .35s;
 }
-nav.scrolled{background:var(--dark);box-shadow:0 2px 20px rgba(0,0,0,.45)}
+#main-nav.scrolled{background:var(--dark);box-shadow:0 2px 20px rgba(0,0,0,.45)}
 .nav-logo img{height:44px;width:auto;display:block}
 .nav-links{display:flex;gap:32px;list-style:none}
 .nav-links a{color:rgba(255,255,255,.82);text-decoration:none;font-size:13.5px;font-weight:400;letter-spacing:.5px;transition:.2s}
@@ -298,6 +298,63 @@ footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
 
 /* ── MOBILE ── */
 .burger{display:none}
+/* Mobile menu overlay */
+.mobile-menu{
+  position:fixed;inset:0;z-index:200;
+  background:rgba(0,0,0,.5);
+  opacity:0;visibility:hidden;
+  transition:opacity .35s ease, visibility .35s ease;
+  overflow-y:auto;
+}
+.mobile-menu.open{opacity:1;visibility:visible}
+.mobile-menu-card{
+  background:#fff;border-radius:20px;
+  box-shadow:0 24px 60px rgba(0,0,0,.25);
+  width:calc(100% - 40px);max-width:400px;
+  margin:40px auto;
+  padding:28px;
+  display:flex;flex-direction:column;
+}
+.mobile-menu-top{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:40px;
+}
+.mobile-menu-logo{height:28px;width:auto;display:block}
+.mobile-menu-close{
+  background:none;border:none;color:var(--text);font-size:20px;
+  cursor:pointer;line-height:1;opacity:.45;transition:.2s;
+  padding:4px;flex-shrink:0;
+}
+.mobile-menu-close:hover{opacity:1}
+.mobile-menu-nav{
+  display:flex;flex-direction:column;align-items:center;
+  gap:26px;margin-bottom:36px;
+}
+.mobile-menu-nav a{
+  display:block;font-family:'DM Sans',sans-serif;
+  font-size:1.2rem;font-weight:400;
+  color:var(--text);text-decoration:none;transition:color .2s;
+}
+.mobile-menu-nav a:hover{color:var(--gold-btn)}
+.mobile-menu-cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  align-self:center;
+  background:var(--gold-btn);color:#fff;border-radius:30px;
+  padding:13px 13px 13px 28px;font-family:'DM Sans',sans-serif;
+  font-size:13px;font-weight:700;letter-spacing:.6px;
+  text-decoration:none;margin-bottom:36px;transition:background .2s;
+}
+.mobile-menu-cta:hover{background:var(--gold-light)}
+.mobile-menu-cta .arrow-circle{width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;transition:transform .3s ease;flex-shrink:0}
+.mobile-menu-cta:hover .arrow-circle{transform:rotate(-45deg)}
+.mobile-menu-contact{display:flex;flex-direction:column;gap:18px}
+.mobile-contact-item{border-left:3px solid var(--gold-btn);padding-left:14px}
+.mobile-contact-label{display:block;font-size:12px;color:var(--muted);margin-bottom:3px}
+.mobile-contact-item a{
+  display:block;font-size:14px;font-weight:600;
+  color:var(--text);text-decoration:none;transition:.2s;
+}
+.mobile-contact-item a:hover{color:var(--gold-btn)}
 @media(max-width:900px){
   nav{padding:0 20px}
   .nav-links,.nav-btns{display:none}
@@ -332,8 +389,35 @@ footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
     <a href="/login" class="btn-login">LOG IN</a>
     <a href="/signup" class="btn-trial">START FREE TRIAL <span class="arrow-circle"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
   </div>
-  <button class="burger" aria-label="Menu">&#9776;</button>
+  <button class="burger" aria-label="Menu" onclick="toggleMobileMenu()">&#9776;</button>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-card">
+    <div class="mobile-menu-top">
+      <img src="images/home-img01.png" alt="Pro Forma Magic" class="mobile-menu-logo"/>
+      <button class="mobile-menu-close" onclick="toggleMobileMenu()" aria-label="Close">&#10005;</button>
+    </div>
+    <nav class="mobile-menu-nav">
+      <a href="/schedule-demo.html" onclick="toggleMobileMenu()">schedule demo</a>
+      <a href="/features.html" onclick="toggleMobileMenu()">features</a>
+      <a href="/samples.html" onclick="toggleMobileMenu()">samples</a>
+      <a href="/pricing.html" onclick="toggleMobileMenu()">pricing</a>
+    </nav>
+    <a href="/signup" class="mobile-menu-cta" onclick="toggleMobileMenu()">START FREE TRIAL <span class="arrow-circle"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <div class="mobile-menu-contact">
+      <div class="mobile-contact-item">
+        <span class="mobile-contact-label">drop us a line at</span>
+        <a href="mailto:support@proformamagic.com">support@proformamagic.com</a>
+      </div>
+      <div class="mobile-contact-item">
+        <span class="mobile-contact-label">schedule a call with us</span>
+        <a href="tel:16133025752">1-613-302-5752</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -630,6 +714,13 @@ footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
 </footer>
 
 <script>
+// Mobile menu
+function toggleMobileMenu(){
+  var menu=document.getElementById('mobile-menu');
+  menu.classList.toggle('open');
+  document.body.style.overflow=menu.classList.contains('open')?'hidden':'';
+}
+
 // Nav darkens on scroll
 var nav=document.getElementById('main-nav');
 window.addEventListener('scroll',function(){
