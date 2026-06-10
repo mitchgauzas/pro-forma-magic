@@ -131,16 +131,44 @@ All SVG inline icons in footer: Instagram, LinkedIn (mitchgauzas), YouTube, TikT
 
 ## Pages Built
 - `index.html` — homepage ✅
+- `pricing.html` — PPP currency detection, START FREE TRIAL ✅
+- `referral.html` — info-only (no action buttons on public page) ✅
+- `faq.html` — live search, accordion, 6 categories ✅
+- `video-library.html` — filter tabs, sort, placeholders ✅
+- `terms.html` — Terms & Conditions + Privacy Policy toggle ✅
 
 ## Pages Pending
 - `features.html` — shell exists, not designed yet
-- `pricing.html` — design to be uploaded to Google Drive by Mitch
 - `samples.html`
 - `schedule-demo.html`
-- `video-library.html`
-- `referral.html`
-- `terms.html`
-- `faq.html`
+
+---
+
+## Dashboard — Referral Page (backlog for post-launch)
+
+When the user has subscribed and designs are provided, build the dashboard referral page with:
+
+### Referral Program (10% commission):
+- **Generate Referral Link button** — visible to all subscribers, but INACTIVE during free trial
+  - Free trial users who click it see a modal: "Become a paid subscriber to activate your referral link."
+  - Active paid subscribers can generate and copy their personal referral link
+- **Banking email field** — for Interac e-Transfer payouts
+
+### Affiliate Program (15% of sales):
+- **Become an Affiliate button** — links to affiliate application/contact flow (details TBD)
+
+### E-Transfer Payment Note (both cards):
+- "Commission payments are made via Interac e-Transfer. Availability varies by country. Where unavailable, Pro Forma Magic Inc. will arrange an alternative electronic payment method."
+
+### Trial user pop-up copy:
+- Heading: "Paid Subscription Required"
+- Body: "Activate your referral link by becoming a paid subscriber. Your referral link will be ready as soon as your subscription is active."
+- CTA: "Start Subscription"
+
+### Rules:
+- Referral link only generates after first payment clears
+- Commission paid when referred user completes first payment (not on free trial sign-up)
+- Referral also receives 10% discount on their first year
 
 ---
 

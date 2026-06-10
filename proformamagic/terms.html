@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Terms and Conditions | Pro Forma Magic</title>
+<title>Terms &amp; Privacy | Pro Forma Magic</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -60,8 +60,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
   background:#fff;border-radius:20px;
   box-shadow:0 24px 60px rgba(0,0,0,.25);
   width:calc(100% - 40px);max-width:400px;
-  margin:40px auto;
-  padding:28px;
+  margin:40px auto;padding:28px;
   display:flex;flex-direction:column;
 }
 .mobile-menu-top{
@@ -71,8 +70,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .mobile-menu-logo{height:28px;width:auto;display:block}
 .mobile-menu-close{
   background:none;border:none;color:var(--text);font-size:20px;
-  cursor:pointer;line-height:1;opacity:.45;transition:.2s;
-  padding:4px;flex-shrink:0;
+  cursor:pointer;line-height:1;opacity:.45;transition:.2s;padding:4px;flex-shrink:0;
 }
 .mobile-menu-close:hover{opacity:1}
 .mobile-menu-nav{
@@ -87,8 +85,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .mobile-menu-nav a:hover{color:var(--gold-btn)}
 .mobile-menu-cta{
   display:inline-flex;align-items:center;justify-content:center;gap:12px;
-  align-self:center;
-  background:var(--gold-btn);color:#fff;border-radius:30px;
+  align-self:center;background:var(--gold-btn);color:#fff;border-radius:30px;
   padding:13px 13px 13px 28px;font-family:'DM Sans',sans-serif;
   font-size:13px;font-weight:700;letter-spacing:.6px;
   text-decoration:none;transition:background .2s;
@@ -102,229 +99,154 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .mobile-menu-contact{display:flex;flex-direction:column;gap:18px}
 .mobile-contact-item{border-left:3px solid var(--gold-btn);padding-left:14px}
 .mobile-contact-label{display:block;font-size:12px;color:var(--muted);margin-bottom:3px}
-.mobile-contact-item a{
-  display:block;font-size:14px;font-weight:600;
-  color:var(--text);text-decoration:none;transition:.2s;
-}
+.mobile-contact-item a{display:block;font-size:14px;font-weight:600;color:var(--text);text-decoration:none;transition:.2s}
 .mobile-contact-item a:hover{color:var(--gold-btn)}
 
-/* ── TERMS PAGE LAYOUT ── */
-.terms-page{
-  padding-top:70px; /* nav height */
-  min-height:100vh;
-}
+/* ── PAGE ── */
+.terms-page{padding-top:70px;min-height:100vh}
 
-/* Page header banner */
+/* Header banner */
 .terms-header{
   background:var(--dark);
-  padding:64px 40px 56px;
+  padding:52px 40px 0;
 }
 .terms-header-inner{
-  max-width:1040px;
-  margin:0 auto;
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
+  max-width:1040px;margin:0 auto;
 }
 .terms-header h1{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2.2rem,4vw,3.2rem);
-  font-weight:600;
-  color:#fff;
-  line-height:1.1;
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:600;color:#fff;line-height:1.1;
+  margin-bottom:8px;
 }
 .terms-last-updated{
-  font-size:13px;
-  color:rgba(255,255,255,.45);
-  white-space:nowrap;
-  padding-bottom:4px;
+  font-size:13px;color:rgba(255,255,255,.4);margin-bottom:32px;
 }
 
-/* Two-column body */
+/* Document toggle tabs */
+.doc-tabs{
+  display:flex;gap:4px;
+  border-bottom:none;
+  margin-top:8px;
+}
+.doc-tab{
+  display:inline-block;
+  padding:11px 26px;
+  font-family:'DM Sans',sans-serif;
+  font-size:13px;font-weight:600;letter-spacing:.4px;
+  color:rgba(255,255,255,.5);
+  cursor:pointer;
+  border:none;background:none;
+  border-radius:10px 10px 0 0;
+  transition:color .2s,background .2s;
+  text-decoration:none;
+}
+.doc-tab:hover{color:rgba(255,255,255,.85)}
+.doc-tab.active{
+  background:#fff;
+  color:var(--text);
+}
+
+/* Body */
 .terms-body{
-  max-width:1040px;
-  margin:0 auto;
+  max-width:1040px;margin:0 auto;
   padding:60px 40px 100px;
   display:grid;
   grid-template-columns:220px 1fr;
-  gap:60px;
-  align-items:start;
+  gap:60px;align-items:start;
 }
 
-/* ── SIDEBAR ── */
-.terms-sidebar{
-  position:sticky;
-  top:90px; /* nav + breathing room */
-}
+/* Sidebar */
+.terms-sidebar{position:sticky;top:90px}
 .terms-sidebar nav{
-  background:#fff;
-  border-radius:10px;
+  background:#fff;border-radius:10px;
   padding:28px 24px;
   box-shadow:0 4px 24px rgba(0,0,0,.06);
 }
 .sidebar-title{
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin-bottom:18px;
+  font-size:10px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);margin-bottom:18px;
 }
 .sidebar-links{
-  list-style:none;
-  display:flex;
-  flex-direction:column;
-  gap:2px;
+  list-style:none;display:flex;flex-direction:column;gap:2px;
 }
 .sidebar-links a{
-  display:block;
-  font-size:13px;
-  color:var(--muted);
-  text-decoration:none;
-  padding:7px 10px;
-  border-radius:6px;
-  line-height:1.4;
+  display:block;font-size:13px;color:var(--muted);text-decoration:none;
+  padding:7px 10px;border-radius:6px;line-height:1.4;
   transition:color .2s, background .2s;
   border-left:2px solid transparent;
 }
-.sidebar-links a:hover{
-  color:var(--text);
-  background:rgba(0,0,0,.04);
-}
+.sidebar-links a:hover{color:var(--text);background:rgba(0,0,0,.04)}
 .sidebar-links a.active{
-  color:var(--gold-btn);
-  font-weight:600;
+  color:var(--gold-btn);font-weight:600;
   border-left-color:var(--gold-btn);
-  text-decoration:underline;
-  text-underline-offset:3px;
 }
 
-/* Mobile TOC dropdown */
+/* Mobile TOC */
 .terms-toc-mobile{
-  display:none;
-  background:#fff;
-  border-radius:10px;
-  padding:18px 20px;
-  margin-bottom:36px;
+  display:none;background:#fff;border-radius:10px;
+  padding:18px 20px;margin-bottom:36px;
   box-shadow:0 4px 24px rgba(0,0,0,.06);
 }
 .terms-toc-toggle{
-  width:100%;
-  background:none;
-  border:none;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  font-family:'DM Sans',sans-serif;
-  font-size:14px;
-  font-weight:600;
-  color:var(--text);
-  cursor:pointer;
-  padding:0;
+  width:100%;background:none;border:none;
+  display:flex;align-items:center;justify-content:space-between;
+  font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;
+  color:var(--text);cursor:pointer;padding:0;
 }
-.terms-toc-toggle .toc-chevron{
-  font-size:12px;
-  transition:transform .25s;
-  color:var(--muted);
-}
+.terms-toc-toggle .toc-chevron{font-size:12px;transition:transform .25s;color:var(--muted)}
 .terms-toc-toggle.open .toc-chevron{transform:rotate(180deg)}
-.terms-toc-list{
-  list-style:none;
-  margin-top:16px;
-  display:none;
-  flex-direction:column;
-  gap:2px;
-}
+.terms-toc-list{list-style:none;margin-top:16px;display:none;flex-direction:column;gap:2px}
 .terms-toc-list.open{display:flex}
 .terms-toc-list a{
-  display:block;
-  font-size:13px;
-  color:var(--muted);
-  text-decoration:none;
-  padding:7px 6px;
-  border-radius:6px;
-  line-height:1.4;
-  transition:color .2s;
+  display:block;font-size:13px;color:var(--muted);text-decoration:none;
+  padding:7px 6px;border-radius:6px;line-height:1.4;transition:color .2s;
 }
 .terms-toc-list a:hover{color:var(--text)}
 
-/* ── CONTENT ── */
+/* Content */
 .terms-content{
-  background:#fff;
-  border-radius:10px;
+  background:#fff;border-radius:10px;
   padding:48px 52px;
   box-shadow:0 4px 24px rgba(0,0,0,.06);
 }
 
+/* Document panels */
+.doc-panel{display:none}
+.doc-panel.active{display:block}
+
 /* Section blocks */
-.terms-section{
-  margin-bottom:52px;
-}
-.terms-section:last-child{
-  margin-bottom:0;
-}
+.terms-section{margin-bottom:52px}
+.terms-section:last-child{margin-bottom:0}
 .terms-section-number{
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:var(--gold-btn);
-  margin-bottom:8px;
+  font-size:11px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gold-btn);margin-bottom:8px;
 }
 .terms-section h2{
   font-family:'Cormorant Garamond',serif;
-  font-size:1.55rem;
-  font-weight:600;
-  color:var(--text);
-  margin-bottom:18px;
-  line-height:1.2;
+  font-size:1.55rem;font-weight:600;color:var(--text);
+  margin-bottom:18px;line-height:1.2;
 }
 .terms-section p{
-  font-size:15px;
-  line-height:1.82;
-  color:var(--muted);
-  margin-bottom:16px;
+  font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:16px;
 }
-.terms-section p:last-child{
-  margin-bottom:0;
-}
-.terms-section a{
-  color:var(--gold-btn);
-  text-decoration:underline;
-  text-underline-offset:2px;
-}
+.terms-section p:last-child{margin-bottom:0}
+.terms-section a{color:var(--gold-btn);text-decoration:underline;text-underline-offset:2px}
 .terms-section a:hover{color:var(--gold)}
 .terms-section ul{
-  list-style:none;
-  margin:0 0 16px 0;
-  padding:0;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
+  list-style:none;margin:0 0 16px 0;padding:0;
+  display:flex;flex-direction:column;gap:10px;
 }
 .terms-section ul li{
-  font-size:15px;
-  line-height:1.75;
-  color:var(--muted);
-  padding-left:20px;
-  position:relative;
+  font-size:15px;line-height:1.75;color:var(--muted);
+  padding-left:20px;position:relative;
 }
 .terms-section ul li::before{
-  content:'';
-  position:absolute;
-  left:0;
-  top:11px;
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:var(--gold-btn);
+  content:'';position:absolute;left:0;top:11px;
+  width:6px;height:6px;border-radius:50%;background:var(--gold-btn);
 }
 .terms-divider{
-  border:none;
-  border-top:1px solid rgba(0,0,0,.07);
-  margin:52px 0;
+  border:none;border-top:1px solid rgba(0,0,0,.07);margin:52px 0;
 }
 
 /* ── FOOTER ── */
@@ -337,7 +259,6 @@ footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
 .subscribe-form input::placeholder{color:rgba(255,255,255,.4)}
 .subscribe-form button{background:var(--gold-btn);border:none;border-radius:0 30px 30px 0;padding:12px 22px;color:#fff;font-weight:600;font-size:13px;cursor:pointer;transition:.2s}
 .subscribe-form button:hover{background:var(--gold-light)}
-/* Flodesk */
 #fd-form-6a285a6510a901be6e0f6940,
 #fd-form-6a285a6510a901be6e0f6940 *{background:transparent!important;box-shadow:none!important}
 #fd-form-6a285a6510a901be6e0f6940 .fd-form-content,
@@ -352,41 +273,22 @@ footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
 #fd-form-6a285a6510a901be6e0f6940 .fd-field-wrapper{flex:1!important;padding:0!important;margin:0!important}
 #fd-form-6a285a6510a901be6e0f6940 input[type="email"],
 #fd-form-6a285a6510a901be6e0f6940 input[type="text"]{
-  background:rgba(255,255,255,.08)!important;
-  border:1px solid rgba(255,255,255,.15)!important;
-  border-right:none!important;
-  border-radius:30px 0 0 30px!important;
-  padding:12px 20px!important;
-  color:#fff!important;
-  font-size:13px!important;
-  font-family:'DM Sans',sans-serif!important;
-  width:100%!important;
-  box-sizing:border-box!important;
-  outline:none!important;
-  margin:0!important;
-  -webkit-appearance:none!important;
-  appearance:none!important;
+  background:rgba(255,255,255,.08)!important;border:1px solid rgba(255,255,255,.15)!important;
+  border-right:none!important;border-radius:30px 0 0 30px!important;
+  padding:12px 20px!important;color:#fff!important;font-size:13px!important;
+  font-family:'DM Sans',sans-serif!important;width:100%!important;
+  box-sizing:border-box!important;outline:none!important;margin:0!important;
+  -webkit-appearance:none!important;appearance:none!important;
 }
 #fd-form-6a285a6510a901be6e0f6940 input::placeholder{color:rgba(255,255,255,.4)!important}
 #fd-form-6a285a6510a901be6e0f6940 button[type="submit"],
 #fd-form-6a285a6510a901be6e0f6940 .fd-btn{
-  background:#C8922A!important;
-  border:none!important;
-  border-radius:0 30px 30px 0!important;
-  -webkit-appearance:none!important;
-  appearance:none!important;
-  padding:12px 22px!important;
-  color:#fff!important;
-  font-weight:600!important;
-  font-size:13px!important;
-  font-family:'DM Sans',sans-serif!important;
-  letter-spacing:.5px!important;
-  cursor:pointer!important;
-  white-space:nowrap!important;
-  flex-shrink:0!important;
-  width:auto!important;
-  margin:0!important;
-  transition:.2s!important;
+  background:#C8922A!important;border:none!important;
+  border-radius:0 30px 30px 0!important;-webkit-appearance:none!important;appearance:none!important;
+  padding:12px 22px!important;color:#fff!important;font-weight:600!important;
+  font-size:13px!important;font-family:'DM Sans',sans-serif!important;
+  letter-spacing:.5px!important;cursor:pointer!important;white-space:nowrap!important;
+  flex-shrink:0!important;width:auto!important;margin:0!important;transition:.2s!important;
 }
 #fd-form-6a285a6510a901be6e0f6940 button[type="submit"]:hover,
 #fd-form-6a285a6510a901be6e0f6940 .fd-btn:hover{background:#E8A830!important}
@@ -408,19 +310,11 @@ footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
   #main-nav{padding:0 20px}
   .nav-links,.nav-btns{display:none}
   .burger{display:block;color:#fff;font-size:22px;cursor:pointer;background:none;border:none}
-
-  .terms-header{padding:44px 24px 40px}
-  .terms-header-inner{flex-direction:column;align-items:flex-start;gap:10px}
-
-  .terms-body{
-    grid-template-columns:1fr;
-    gap:0;
-    padding:32px 20px 80px;
-  }
+  .terms-header{padding:44px 24px 0}
+  .terms-body{grid-template-columns:1fr;gap:0;padding:32px 20px 80px}
   .terms-sidebar{display:none}
   .terms-toc-mobile{display:block}
   .terms-content{padding:32px 24px}
-
   .footer-top{grid-template-columns:1fr}
   .footer-contact-social{grid-template-columns:1fr}
   .footer-inner{padding:0 24px}
@@ -447,7 +341,7 @@ footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
   <button class="burger" aria-label="Menu" onclick="toggleMobileMenu()">&#9776;</button>
 </nav>
 
-<!-- Mobile Menu Overlay -->
+<!-- Mobile Menu -->
 <div class="mobile-menu" id="mobile-menu">
   <div class="mobile-menu-card">
     <div class="mobile-menu-top">
@@ -480,181 +374,361 @@ footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
 <!-- PAGE -->
 <div class="terms-page">
 
-  <!-- Header banner -->
+  <!-- Header with toggle -->
   <div class="terms-header">
     <div class="terms-header-inner">
-      <h1>Terms and Conditions</h1>
-      <div class="terms-last-updated">Last updated: 09.06.2026</div>
+      <h1 id="page-title">Terms &amp; Conditions</h1>
+      <div class="terms-last-updated">Last updated: June 10, 2026 &nbsp;&bull;&nbsp; Pro Forma Magic Inc. &nbsp;&bull;&nbsp; Ottawa, Ontario, Canada</div>
+      <div class="doc-tabs">
+        <button class="doc-tab active" id="tab-terms" onclick="switchDoc('terms')">Terms &amp; Conditions</button>
+        <button class="doc-tab" id="tab-privacy" onclick="switchDoc('privacy')">Privacy Policy</button>
+      </div>
     </div>
   </div>
 
-  <!-- Body: sidebar + content -->
+  <!-- Body -->
   <div class="terms-body">
 
     <!-- Desktop sidebar -->
     <aside class="terms-sidebar">
-      <nav aria-label="Terms sections">
+      <nav aria-label="Section navigation">
         <div class="sidebar-title">On this page</div>
         <ul class="sidebar-links" id="sidebar-links">
-          <li><a href="#introduction" class="active">Introduction</a></li>
-          <li><a href="#registration">Registration</a></li>
-          <li><a href="#our-services">Our services</a></li>
-          <li><a href="#failed-charges">Failed charges</a></li>
-          <li><a href="#termination">Termination and pause of Our Services</a></li>
-          <li><a href="#intellectual-property">Intellectual property</a></li>
-          <li><a href="#third-party-links">Third-party links</a></li>
-          <li><a href="#use-policies">Use policies</a></li>
-          <li><a href="#our-obligations">Our obligations</a></li>
-          <li><a href="#limitation">Limitation of liability</a></li>
-          <li><a href="#governing-law">Governing law</a></li>
-          <li><a href="#changes">Changes</a></li>
-          <li><a href="#contact">Contact Us</a></li>
+          <!-- populated by JS based on active doc -->
         </ul>
       </nav>
     </aside>
 
-    <!-- Mobile TOC dropdown -->
+    <!-- Mobile TOC -->
     <div class="terms-toc-mobile" id="mobile-toc">
       <button class="terms-toc-toggle" id="toc-toggle" onclick="toggleToc()">
-        Jump to section
-        <span class="toc-chevron">&#9660;</span>
+        Jump to section <span class="toc-chevron">&#9660;</span>
       </button>
-      <ul class="terms-toc-list" id="toc-list">
-        <li><a href="#introduction" onclick="closeToc()">1. Introduction</a></li>
-        <li><a href="#registration" onclick="closeToc()">2. Registration</a></li>
-        <li><a href="#our-services" onclick="closeToc()">3. Our services</a></li>
-        <li><a href="#failed-charges" onclick="closeToc()">4. Failed charges</a></li>
-        <li><a href="#termination" onclick="closeToc()">5. Termination and pause of Our Services</a></li>
-        <li><a href="#intellectual-property" onclick="closeToc()">6. Intellectual property</a></li>
-        <li><a href="#third-party-links" onclick="closeToc()">7. Third-party links</a></li>
-        <li><a href="#use-policies" onclick="closeToc()">8. Use policies</a></li>
-        <li><a href="#our-obligations" onclick="closeToc()">9. Our obligations</a></li>
-        <li><a href="#limitation" onclick="closeToc()">10. Limitation of liability</a></li>
-        <li><a href="#governing-law" onclick="closeToc()">11. Governing law</a></li>
-        <li><a href="#changes" onclick="closeToc()">12. Changes</a></li>
-        <li><a href="#contact" onclick="closeToc()">13. Contact Us</a></li>
-      </ul>
+      <ul class="terms-toc-list" id="toc-list"></ul>
     </div>
 
     <!-- Main content -->
-    <main class="terms-content" id="terms-content">
+    <main class="terms-content">
 
-      <section class="terms-section" id="introduction">
-        <div class="terms-section-number">Section 1</div>
-        <h2>Introduction</h2>
-        <p>Pro Forma Magic Inc. (hereinafter — the "Company", "We", "Our" and "Us") offers users and companies (hereinafter — the "You" or "Your") access to our financial analysis platform and related services (hereinafter — the "Services"). By using Our Services, You agree to the following conditions, on behalf of yourself, all members of your household, and others who use any Service under Your Account.</p>
-        <p>These Terms of Use (hereinafter — the "Terms") govern Your use of Our Services, which are currently available at <a href="https://proformamagic.com">https://proformamagic.com</a>. Pro Forma Magic Inc. owns and operates the Website.</p>
-        <p>To use Our Services, You must agree to all the Terms outlined below, without any objections or modifications. By accepting these Terms, You also agree to the Privacy Policy available at <a href="/privacy.html">Privacy Policy</a>.</p>
-        <p>You automatically agree to these Terms by (1) clicking the appropriate button on our Website or configuring Your Web browser settings, (2) registering on Our Website (as described below), or (3) interacting with our Website.</p>
-        <p>Please read these Terms carefully before accessing or using Our Services. If You do not agree with the Terms and Our policies, You may not access or use the Services.</p>
-        <p>We comply with the General Data Protection Regulation (the "GDPR" Regulation (EU) 2016/679 of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data), the California Consumer Privacy Act of 2018, and other regulatory acts.</p>
-      </section>
+      <!-- ══════════════════════ TERMS PANEL ══════════════════════ -->
+      <div class="doc-panel active" id="panel-terms">
 
-      <hr class="terms-divider"/>
+        <section class="terms-section" id="t-introduction">
+          <div class="terms-section-number">Section 1</div>
+          <h2>Introduction &amp; Agreement to Terms</h2>
+          <p>These Terms and Conditions ("Terms") constitute a legally binding agreement between you ("User", "you", or "your") and Pro Forma Magic Inc. ("Company", "we", "us", or "our"), a corporation incorporated under the laws of Canada, with its registered office at 2 Barbara Ann Private, Ottawa, Ontario, K2C 3V2.</p>
+          <p>By accessing our website at <a href="https://proformamagic.com">proformamagic.com</a>, creating an account, starting a free trial, or purchasing an annual license, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you must not use our platform or services.</p>
+          <p>These Terms apply regardless of where you are located in the world. Users outside Canada expressly agree that any dispute arising from their use of the platform will be governed by the laws of the Province of Ontario and the federal laws of Canada applicable therein, and will be subject to the exclusive jurisdiction of the courts of Ottawa, Ontario.</p>
+        </section>
 
-      <section class="terms-section" id="registration">
-        <div class="terms-section-number">Section 2</div>
-        <h2>Registration</h2>
-        <p>To begin using the Services, schedule a consultation via the 'Get Started' form on our website. Please review our <a href="/privacy.html">Privacy Policy</a> to understand our data collection practices.</p>
-      </section>
+        <hr class="terms-divider"/>
 
-      <hr class="terms-divider"/>
+        <section class="terms-section" id="t-services">
+          <div class="terms-section-number">Section 2</div>
+          <h2>Description of Services</h2>
+          <p>Pro Forma Magic Inc. provides a cloud-based real estate analysis platform (the "Platform") that enables users to evaluate properties, generate financial reports, and present analysis findings. The Platform is offered on an annual subscription basis following a free trial period.</p>
+          <p>We reserve the right to modify, suspend, or discontinue any aspect of the Platform at any time, with reasonable notice to active subscribers. We will not be liable to you or any third party for any modification, suspension, or discontinuation of the Platform.</p>
+          <p>The Platform is intended to assist with real estate analysis and is provided as an informational and productivity tool only. Nothing on the Platform constitutes financial, investment, legal, or professional advice. You are solely responsible for any decisions you make based on information generated by the Platform.</p>
+        </section>
 
-      <section class="terms-section" id="our-services">
-        <div class="terms-section-number">Section 3</div>
-        <h2>Our services</h2>
-        <p>Our Website offers a variety of Services. We may introduce new Services at our discretion. Service terms are detailed in a separate cooperation agreement.</p>
-      </section>
+        <hr class="terms-divider"/>
 
-      <hr class="terms-divider"/>
+        <section class="terms-section" id="t-accounts">
+          <div class="terms-section-number">Section 3</div>
+          <h2>Account Registration &amp; Eligibility</h2>
+          <p>To use the Platform, you must create an account by providing accurate, complete, and current information including your name and a valid email address. You must be at least 18 years of age and have the legal capacity to enter into a binding agreement in your jurisdiction.</p>
+          <p>You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to notify us immediately at <a href="mailto:support@proformamagic.com">support@proformamagic.com</a> upon becoming aware of any unauthorized use of your account.</p>
+          <p>One account is granted per subscription. Account sharing with individuals outside your organization is not permitted. We reserve the right to suspend or terminate accounts that we reasonably believe are being shared or used in violation of these Terms.</p>
+        </section>
 
-      <section class="terms-section" id="failed-charges">
-        <div class="terms-section-number">Section 4</div>
-        <h2>Failed charges</h2>
-        <p>In case of overdue payments, we hold the right to:</p>
-        <ul>
-          <li>Declare all outstanding amounts immediately due and payable.</li>
-          <li>Immediately suspend Service access until full payment is received.</li>
-          <li>We will suspend if specialist involvement in your project, and you will temporarily or permanently lose Service access. Upon successful debt repayment, if specialist involvement will resume. If the debt remains unpaid for an extended period (as defined in the main cooperation agreement), we may terminate the agreement and invoke the Arbitration Clause.</li>
-        </ul>
-      </section>
+        <hr class="terms-divider"/>
 
-      <hr class="terms-divider"/>
+        <section class="terms-section" id="t-subscription">
+          <div class="terms-section-number">Section 4</div>
+          <h2>Subscription, Pricing &amp; Free Trial</h2>
+          <p>The Platform is available under an annual license model. Upon completing registration, you will have access to a free trial period. No credit card is required to begin the free trial. At the conclusion of the free trial, continued access requires payment of the applicable annual license fee.</p>
+          <p>Pricing is displayed in your local currency based on your geographic location and reflects purchasing power parity adjustments relative to the Canadian market. The price displayed at checkout is the price you pay for the twelve-month license period.</p>
+          <p>All fees are payable in advance for the full annual period. Payment is processed through our third-party payment processor (Stripe). By submitting payment, you authorize the charge of the applicable annual fee to your selected payment method.</p>
+          <p>We reserve the right to change our pricing at any time. Changes to pricing will be communicated to active subscribers no less than thirty (30) days before your next renewal date. Your continued use of the Platform after a price change constitutes your acceptance of the new pricing.</p>
+        </section>
 
-      <section class="terms-section" id="termination">
-        <div class="terms-section-number">Section 5</div>
-        <h2>Termination and pause of Our Services</h2>
-        <p>Service termination or suspension will follow the guidelines in the main cooperation agreement and these Terms.</p>
-      </section>
+        <hr class="terms-divider"/>
 
-      <hr class="terms-divider"/>
+        <section class="terms-section" id="t-cancellation">
+          <div class="terms-section-number">Section 5</div>
+          <h2>Cancellation &amp; Refund Policy</h2>
+          <p>You may cancel your subscription at any time by accessing your account settings or by contacting us at <a href="mailto:support@proformamagic.com">support@proformamagic.com</a>. Upon cancellation, your access to the Platform will continue until the end of your current annual license period. Access will not be renewed and your account will be deactivated at the end of that period.</p>
+          <p>All annual license fees are non-refundable. There are no partial refunds for unused portions of your license period. This no-refund policy is consistent with Canadian consumer protection law as it applies to digital software and platform services, and is consistent with the Consumer Protection Act, 2002 (Ontario) as applicable to these types of digital services.</p>
+          <p>In the event we discontinue the Platform during your active license period, we will provide a pro-rated refund for the remaining unused portion of your license term.</p>
+        </section>
 
-      <section class="terms-section" id="intellectual-property">
-        <div class="terms-section-number">Section 6</div>
-        <h2>Intellectual property</h2>
-        <p>The Website, its software, infrastructure, databases, and content (including text, images, and logos) are owned by us or our licensors and are protected by intellectual property laws. These Terms do not transfer any intellectual property rights, which are governed by the main cooperation agreement.</p>
-      </section>
+        <hr class="terms-divider"/>
 
-      <hr class="terms-divider"/>
+        <section class="terms-section" id="t-intellectual-property">
+          <div class="terms-section-number">Section 6</div>
+          <h2>Intellectual Property</h2>
+          <p>The Platform, including its software, design, text, graphics, logos, and all other content, is the exclusive property of Pro Forma Magic Inc. and is protected under the Copyright Act (Canada) and other applicable intellectual property laws. All rights are reserved.</p>
+          <p>Your annual license grants you a limited, non-exclusive, non-transferable, revocable right to access and use the Platform for your personal or internal business purposes during the license period. This license does not permit you to:</p>
+          <ul>
+            <li>Copy, reproduce, distribute, or publicly display any portion of the Platform;</li>
+            <li>Reverse engineer, decompile, or attempt to extract the source code of the Platform;</li>
+            <li>Use the Platform to develop a competing product or service;</li>
+            <li>Sublicense or resell access to the Platform;</li>
+            <li>Remove or alter any proprietary notices, labels, or marks.</li>
+          </ul>
+          <p>Any content you create or upload within the Platform (such as property data, notes, and reports) remains your property. By uploading content, you grant us a limited license to store and process that content solely for the purpose of providing the Platform to you.</p>
+        </section>
 
-      <section class="terms-section" id="third-party-links">
-        <div class="terms-section-number">Section 7</div>
-        <h2>Third-party links</h2>
-        <p>Our Website may link to third-party sites. We are not responsible for their content, privacy policies, or practices. We are not liable for any damages from your use of these third-party sites. Please review their terms and privacy policies.</p>
-      </section>
+        <hr class="terms-divider"/>
 
-      <hr class="terms-divider"/>
+        <section class="terms-section" id="t-acceptable-use">
+          <div class="terms-section-number">Section 7</div>
+          <h2>Acceptable Use</h2>
+          <p>You agree to use the Platform only for lawful purposes and in accordance with these Terms. You must not use the Platform:</p>
+          <ul>
+            <li>In any way that violates applicable Canadian federal or provincial law, or the laws of any jurisdiction from which you access the Platform;</li>
+            <li>To transmit unsolicited commercial electronic messages in violation of Canada's Anti-Spam Legislation (CASL), S.C. 2010, c. 23;</li>
+            <li>To impersonate any person or entity, or falsely state your affiliation with any person or entity;</li>
+            <li>To attempt to gain unauthorized access to any other accounts, systems, or networks connected to the Platform;</li>
+            <li>To upload or transmit any malicious code, viruses, or harmful software;</li>
+            <li>For any purpose that could damage, disable, or impair the Platform or interfere with any other user's use of the Platform.</li>
+          </ul>
+          <p>We reserve the right to suspend or terminate your account immediately if you breach any of the above restrictions, without any obligation to provide a refund.</p>
+        </section>
 
-      <section class="terms-section" id="use-policies">
-        <div class="terms-section-number">Section 8</div>
-        <h2>Use policies</h2>
-        <p><strong>8.1.</strong> You are responsible for your use of the Services and any shared information.</p>
-        <p><strong>8.2.</strong> The Services are for your use and/or users under the same obligations as outlined in the main cooperation agreement.</p>
-        <p><strong>8.3.</strong> Users must be 18 or older and provide a valid email and other required information to use the Services.</p>
-        <p><strong>8.4.</strong> Users must comply with these Terms to prevent fraud, ensure service quality, and protect the integrity of our Services.</p>
-        <p><strong>8.5.</strong> Service quality depends on your internet connection, for which we are not responsible. We may suspend or terminate access if your use is unlawful, prohibited, or detrimental to our Services or other users.</p>
-        <p><strong>8.6.</strong> You will indemnify us from claims resulting from your breach of obligations, covering losses and damages incurred.</p>
-      </section>
+        <hr class="terms-divider"/>
 
-      <hr class="terms-divider"/>
+        <section class="terms-section" id="t-third-party">
+          <div class="terms-section-number">Section 8</div>
+          <h2>Third-Party Services &amp; Links</h2>
+          <p>The Platform may integrate with or contain links to third-party websites, services, or data sources. These third-party services are not under our control, and we are not responsible for their content, privacy practices, or terms of service. Links to third-party websites do not constitute an endorsement by us of those websites or their content.</p>
+          <p>Your use of third-party services integrated with the Platform is governed by the terms and conditions of those third parties. We recommend you review the terms and privacy policies of any third-party services you use in connection with the Platform.</p>
+        </section>
 
-      <section class="terms-section" id="our-obligations">
-        <div class="terms-section-number">Section 9</div>
-        <h2>Our obligations</h2>
-        <p>We strive to provide quality Services, improve our expertise, and use licensed software. We are not liable for service disruptions due to force majeure. We implement data security measures and may use subcontractors under the same obligations. We may assign our rights and obligations, notifying you in writing.</p>
-      </section>
+        <hr class="terms-divider"/>
 
-      <hr class="terms-divider"/>
+        <section class="terms-section" id="t-disclaimer">
+          <div class="terms-section-number">Section 9</div>
+          <h2>Disclaimer of Warranties</h2>
+          <p>The Platform is provided on an "as is" and "as available" basis without warranties of any kind, either express or implied, to the fullest extent permitted by applicable law. We do not warrant that the Platform will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
+          <p>We make no warranty regarding the accuracy, completeness, or reliability of any financial analysis, property valuations, or other outputs generated by the Platform. All analysis outputs are for informational purposes only and must not be relied upon as professional financial, legal, or investment advice.</p>
+          <p>Nothing in these Terms limits or excludes any guarantees, warranties, representations, or conditions implied or imposed by law that cannot lawfully be limited or excluded under the laws of the Province of Ontario or applicable federal Canadian law.</p>
+        </section>
 
-      <section class="terms-section" id="limitation">
-        <div class="terms-section-number">Section 10</div>
-        <h2>Limitation of liability</h2>
-        <p>We are not liable for indirect, incidental, special, or punitive damages, including loss of profits, data, or goodwill, resulting from your use of our Services, third-party conduct, or unauthorized access, even if advised of such potential damage.</p>
-      </section>
+        <hr class="terms-divider"/>
 
-      <hr class="terms-divider"/>
+        <section class="terms-section" id="t-limitation">
+          <div class="terms-section-number">Section 10</div>
+          <h2>Limitation of Liability</h2>
+          <p>To the maximum extent permitted by law, Pro Forma Magic Inc. and its officers, directors, employees, and agents will not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, loss of data, loss of goodwill, or business interruption, arising out of or in connection with your use of or inability to use the Platform.</p>
+          <p>Our total cumulative liability to you for any claims arising out of or related to these Terms or your use of the Platform will not exceed the amount you paid to us in the twelve (12) months immediately preceding the event giving rise to the claim.</p>
+          <p>Some provinces and jurisdictions do not allow the exclusion or limitation of incidental or consequential damages. To the extent such limitations are not permitted under applicable law, the above limitations may not apply to you.</p>
+        </section>
 
-      <section class="terms-section" id="governing-law">
-        <div class="terms-section-number">Section 11</div>
-        <h2>Governing law</h2>
-        <p>These Terms are governed by the laws of Canada. Disputes shall be resolved by arbitration in Ottawa, Ontario. The language is English. If any provision is invalid, the remaining provisions remain in effect. These Terms constitute the entire agreement, superseding prior agreements.</p>
-      </section>
+        <hr class="terms-divider"/>
 
-      <hr class="terms-divider"/>
+        <section class="terms-section" id="t-indemnification">
+          <div class="terms-section-number">Section 11</div>
+          <h2>Indemnification</h2>
+          <p>You agree to indemnify, defend, and hold harmless Pro Forma Magic Inc. and its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, costs, and expenses (including reasonable legal fees) arising out of or in connection with:</p>
+          <ul>
+            <li>Your use of the Platform or violation of these Terms;</li>
+            <li>Your violation of any applicable law or regulation;</li>
+            <li>Any content you submit, upload, or transmit through the Platform;</li>
+            <li>Your infringement of any third-party intellectual property rights.</li>
+          </ul>
+        </section>
 
-      <section class="terms-section" id="changes">
-        <div class="terms-section-number">Section 12</div>
-        <h2>Changes</h2>
-        <p>We may modify or replace these Terms at any time. For significant changes, we will provide notice before they take effect. By continuing to use our Services, you agree to the revised terms. If you disagree, you must terminate your use of the Services.</p>
-      </section>
+        <hr class="terms-divider"/>
 
-      <hr class="terms-divider"/>
+        <section class="terms-section" id="t-governing-law">
+          <div class="terms-section-number">Section 12</div>
+          <h2>Governing Law &amp; Dispute Resolution</h2>
+          <p>These Terms are governed exclusively by the laws of the Province of Ontario and the federal laws of Canada applicable therein, without regard to conflict of law principles. By using the Platform, all users — regardless of their country of residence — agree to submit to the exclusive jurisdiction of the courts located in Ottawa, Ontario, Canada for the resolution of any disputes arising under or in connection with these Terms.</p>
+          <p>Where you access the Platform from outside Canada, you do so at your own initiative and are responsible for compliance with local laws to the extent they apply. Pro Forma Magic Inc. makes no representation that the Platform is appropriate or lawful for use in all jurisdictions.</p>
+          <p>Before initiating formal legal proceedings, both parties agree to make good-faith efforts to resolve any dispute informally by contacting us at <a href="mailto:support@proformamagic.com">support@proformamagic.com</a>. If a dispute cannot be resolved informally within thirty (30) days, either party may pursue their legal remedies.</p>
+        </section>
 
-      <section class="terms-section" id="contact">
-        <div class="terms-section-number">Section 13</div>
-        <h2>Contact Us</h2>
-        <p>To resolve complaints or get more information, contact us at <a href="mailto:support@proformamagic.com">support@proformamagic.com</a>.</p>
-      </section>
+        <hr class="terms-divider"/>
+
+        <section class="terms-section" id="t-changes">
+          <div class="terms-section-number">Section 13</div>
+          <h2>Changes to These Terms</h2>
+          <p>We reserve the right to amend these Terms at any time. For material changes, we will provide at least fourteen (14) days' advance notice to registered users via email or a prominent notice on the Platform. Your continued use of the Platform after the effective date of any amended Terms constitutes your acceptance of the revised Terms.</p>
+          <p>If you do not agree with a material change to these Terms, you may cancel your account prior to the effective date of the change. No refund will be issued for any unused portion of your license period in this circumstance, except as may otherwise be required by law.</p>
+        </section>
+
+        <hr class="terms-divider"/>
+
+        <section class="terms-section" id="t-contact">
+          <div class="terms-section-number">Section 14</div>
+          <h2>Contact Us</h2>
+          <p>For questions, concerns, or complaints regarding these Terms or the Platform, please contact us:</p>
+          <ul>
+            <li><strong style="color:var(--text)">Email:</strong> <a href="mailto:support@proformamagic.com">support@proformamagic.com</a></li>
+            <li><strong style="color:var(--text)">Phone:</strong> 1-613-302-5752</li>
+            <li><strong style="color:var(--text)">Mail:</strong> 2 Barbara Ann Private, Ottawa, Ontario, Canada K2C 3V2</li>
+          </ul>
+          <p style="margin-top:24px;font-size:13px;color:var(--muted);font-style:italic">These Terms and Conditions are provided for informational purposes and have been prepared in good faith. Users are encouraged to seek independent legal advice regarding their specific situation. Pro Forma Magic Inc. recommends this document be reviewed by qualified legal counsel before deployment.</p>
+        </section>
+
+      </div><!-- /panel-terms -->
+
+      <!-- ══════════════════════ PRIVACY PANEL ══════════════════════ -->
+      <div class="doc-panel" id="panel-privacy">
+
+        <section class="terms-section" id="p-overview">
+          <div class="terms-section-number">Section 1</div>
+          <h2>Overview &amp; Commitment to Privacy</h2>
+          <p>Pro Forma Magic Inc. ("we", "us", or "our") is committed to protecting the privacy and personal information of all individuals who use our platform at <a href="https://proformamagic.com">proformamagic.com</a>. This Privacy Policy explains what personal information we collect, why we collect it, how we use and protect it, and your rights regarding that information.</p>
+          <p>This Privacy Policy is prepared in accordance with the <em>Personal Information Protection and Electronic Documents Act</em> (PIPEDA), S.C. 2000, c. 5, and the Province of Ontario's applicable privacy requirements. We also comply with Canada's Anti-Spam Legislation (CASL), S.C. 2010, c. 23, in all electronic communications.</p>
+          <p>By using the Platform, you consent to the collection, use, and disclosure of your personal information as described in this Privacy Policy. If you do not agree with this Privacy Policy, please do not use the Platform.</p>
+        </section>
+
+        <hr class="terms-divider"/>
+
+        <section class="terms-section" id="p-collection">
+          <div class="terms-section-number">Section 2</div>
+          <h2>Information We Collect</h2>
+          <p>We collect personal information that you provide directly to us, information collected automatically through your use of the Platform, and information from third-party services where applicable. The categories of information we may collect include:</p>
+          <ul>
+            <li><strong style="color:var(--text)">Account information:</strong> Your name, email address, and any other information you provide when creating or updating your account.</li>
+            <li><strong style="color:var(--text)">Payment information:</strong> Billing details are collected and processed by our third-party payment processor (Stripe). We do not store your full credit card number or banking information on our servers.</li>
+            <li><strong style="color:var(--text)">Platform usage data:</strong> Information about how you use the Platform, including features accessed, reports generated, properties analyzed, and session duration.</li>
+            <li><strong style="color:var(--text)">Device and technical data:</strong> IP address, browser type and version, operating system, referring URLs, and general geographic location derived from your IP address.</li>
+            <li><strong style="color:var(--text)">Communications:</strong> Records of communications between you and our support team, including emails and any information you provide when contacting us.</li>
+            <li><strong style="color:var(--text)">Voluntary submissions:</strong> Information you submit through forms on our website, including newsletter subscriptions and demo requests.</li>
+          </ul>
+          <p>We do not knowingly collect personal information from children under the age of 18. If you believe we have inadvertently collected such information, please contact us immediately.</p>
+        </section>
+
+        <hr class="terms-divider"/>
+
+        <section class="terms-section" id="p-use">
+          <div class="terms-section-number">Section 3</div>
+          <h2>How We Use Your Information</h2>
+          <p>We collect and use your personal information only for purposes that a reasonable person would consider appropriate in the circumstances, and only to the extent necessary for those purposes. We use your information to:</p>
+          <ul>
+            <li>Create and manage your account, and provide you access to the Platform;</li>
+            <li>Process your subscription payment and maintain billing records;</li>
+            <li>Send you transactional communications such as account confirmations, receipts, and service notices;</li>
+            <li>Respond to your inquiries, support requests, and feedback;</li>
+            <li>Improve, maintain, and develop new features for the Platform;</li>
+            <li>Detect, prevent, and address fraud, security breaches, and technical issues;</li>
+            <li>Send you marketing communications and updates about the Platform, where you have consented as required under CASL;</li>
+            <li>Comply with applicable legal obligations under Canadian law.</li>
+          </ul>
+          <p>We will not use your personal information for any purpose other than those described in this Privacy Policy without first obtaining your consent, or as otherwise required or permitted by law.</p>
+        </section>
+
+        <hr class="terms-divider"/>
+
+        <section class="terms-section" id="p-casl">
+          <div class="terms-section-number">Section 4</div>
+          <h2>Commercial Electronic Messages &amp; CASL</h2>
+          <p>We comply with Canada's Anti-Spam Legislation (CASL). We will only send you commercial electronic messages (such as newsletters and promotional emails) if you have expressly consented to receive them, or where implied consent applies under CASL (for example, if you are an existing subscriber).</p>
+          <p>Each commercial email we send will include a clear and simple mechanism for you to unsubscribe at any time. You may also withdraw your consent to receive commercial messages at any time by contacting us at <a href="mailto:support@proformamagic.com">support@proformamagic.com</a>. We will process your unsubscribe request within ten (10) business days as required by CASL.</p>
+          <p>Transactional messages (such as account verification emails, receipts, and security notifications) are not commercial electronic messages under CASL and will be sent as necessary for the provision of our services.</p>
+        </section>
+
+        <hr class="terms-divider"/>
+
+        <section class="terms-section" id="p-disclosure">
+          <div class="terms-section-number">Section 5</div>
+          <h2>Disclosure of Information</h2>
+          <p>We do not sell, trade, or rent your personal information to third parties. We may share your information in the following limited circumstances:</p>
+          <ul>
+            <li><strong style="color:var(--text)">Service providers:</strong> We work with trusted third-party vendors who assist us in operating the Platform (such as cloud hosting, payment processing, and email delivery). These parties are bound by contractual obligations to keep your information confidential and use it only to provide services to us.</li>
+            <li><strong style="color:var(--text)">Legal compliance:</strong> We may disclose your information if required to do so by law, court order, or other governmental or regulatory authority, or when we believe disclosure is necessary to protect our rights, prevent fraud, or protect the safety of our users.</li>
+            <li><strong style="color:var(--text)">Business transfers:</strong> In the event of a merger, acquisition, or sale of all or a portion of our assets, your personal information may be transferred as part of that transaction. We will notify you by email and/or prominent notice on the Platform before your personal information is transferred and becomes subject to a different privacy policy.</li>
+            <li><strong style="color:var(--text)">With your consent:</strong> We may share your information with third parties when you have given us explicit consent to do so.</li>
+          </ul>
+        </section>
+
+        <hr class="terms-divider"/>
+
+        <section class="terms-section" id="p-retention">
+          <div class="terms-section-number">Section 6</div>
+          <h2>Data Retention</h2>
+          <p>We retain your personal information only for as long as is necessary to fulfill the purposes for which it was collected, including to satisfy any legal, accounting, or reporting requirements. When determining the appropriate retention period, we consider the amount, nature, and sensitivity of the personal information, the potential risk of harm from unauthorized use or disclosure, and the purposes for which we process the information.</p>
+          <p>Account information is retained for the duration of your subscription and for a period of seven (7) years following the termination of your account, in accordance with Canada Revenue Agency recordkeeping requirements. You may request the deletion of your data at any time (subject to legal retention requirements) by contacting us at <a href="mailto:support@proformamagic.com">support@proformamagic.com</a>.</p>
+        </section>
+
+        <hr class="terms-divider"/>
+
+        <section class="terms-section" id="p-security">
+          <div class="terms-section-number">Section 7</div>
+          <h2>Security of Your Information</h2>
+          <p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include encryption of data in transit (TLS/SSL), access controls limiting who within our organization can access personal data, and use of reputable cloud infrastructure providers with strong security certifications.</p>
+          <p>No method of transmission over the Internet or electronic storage is 100% secure. While we strive to protect your personal information using commercially acceptable means, we cannot guarantee absolute security. You are responsible for maintaining the security of your account credentials.</p>
+          <p>In the event of a data breach that poses a real risk of significant harm to you, we will notify you and the Office of the Privacy Commissioner of Canada as required under PIPEDA's mandatory breach reporting obligations.</p>
+        </section>
+
+        <hr class="terms-divider"/>
+
+        <section class="terms-section" id="p-international">
+          <div class="terms-section-number">Section 8</div>
+          <h2>International Users &amp; Data Transfers</h2>
+          <p>Pro Forma Magic Inc. is based in Canada, and your personal information is stored and processed in Canada. By using the Platform from outside Canada, you consent to the transfer, storage, and processing of your personal information in Canada, where privacy laws may differ from those in your country of residence.</p>
+          <p>Where we engage service providers located outside of Canada (for example, cloud service providers), we take steps to ensure that your personal information receives a comparable level of protection through contractual arrangements. We do not transfer personal information to countries or organizations that do not provide an adequate level of protection.</p>
+        </section>
+
+        <hr class="terms-divider"/>
+
+        <section class="terms-section" id="p-cookies">
+          <div class="terms-section-number">Section 9</div>
+          <h2>Cookies &amp; Tracking Technologies</h2>
+          <p>We use cookies and similar tracking technologies to enhance your experience on the Platform, analyze usage patterns, and support authentication and session management. Cookies are small text files stored on your device by your browser.</p>
+          <p>The types of cookies we use include:</p>
+          <ul>
+            <li><strong style="color:var(--text)">Essential cookies:</strong> Required for the Platform to function, including session management and authentication. These cannot be disabled.</li>
+            <li><strong style="color:var(--text)">Analytics cookies:</strong> Help us understand how users interact with the Platform so we can improve it. These may be provided by third-party analytics services.</li>
+            <li><strong style="color:var(--text)">Preference cookies:</strong> Remember your settings and preferences to improve your experience.</li>
+          </ul>
+          <p>You may configure your browser to refuse cookies or to alert you when cookies are being sent. Please note that disabling cookies may affect the functionality of the Platform.</p>
+        </section>
+
+        <hr class="terms-divider"/>
+
+        <section class="terms-section" id="p-rights">
+          <div class="terms-section-number">Section 10</div>
+          <h2>Your Privacy Rights</h2>
+          <p>Under PIPEDA and applicable Canadian privacy law, you have the following rights with respect to your personal information:</p>
+          <ul>
+            <li><strong style="color:var(--text)">Right of access:</strong> You have the right to request access to the personal information we hold about you.</li>
+            <li><strong style="color:var(--text)">Right to correction:</strong> You have the right to request that we correct any inaccurate or incomplete personal information we hold about you.</li>
+            <li><strong style="color:var(--text)">Right to withdraw consent:</strong> Where we rely on your consent to process your personal information, you may withdraw that consent at any time. Withdrawal of consent may affect our ability to provide certain services.</li>
+            <li><strong style="color:var(--text)">Right to deletion:</strong> Subject to legal retention requirements, you may request the deletion of your personal information from our systems.</li>
+            <li><strong style="color:var(--text)">Right to complain:</strong> You have the right to file a complaint with the Office of the Privacy Commissioner of Canada at <a href="https://www.priv.gc.ca" target="_blank" rel="noopener">www.priv.gc.ca</a> if you believe we have not complied with applicable privacy law.</li>
+          </ul>
+          <p>To exercise any of these rights, please contact our Privacy Officer at <a href="mailto:support@proformamagic.com">support@proformamagic.com</a>. We will respond to your request within thirty (30) days, as required by PIPEDA.</p>
+        </section>
+
+        <hr class="terms-divider"/>
+
+        <section class="terms-section" id="p-changes">
+          <div class="terms-section-number">Section 11</div>
+          <h2>Changes to This Privacy Policy</h2>
+          <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting a notice on the Platform or by sending an email to your registered email address before the changes take effect.</p>
+          <p>Your continued use of the Platform after the effective date of any revised Privacy Policy constitutes your acceptance of the changes. We encourage you to review this Privacy Policy periodically.</p>
+        </section>
+
+        <hr class="terms-divider"/>
+
+        <section class="terms-section" id="p-contact">
+          <div class="terms-section-number">Section 12</div>
+          <h2>Contact Our Privacy Officer</h2>
+          <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact our designated Privacy Officer:</p>
+          <ul>
+            <li><strong style="color:var(--text)">Privacy Officer:</strong> Mitch Gauzas, Pro Forma Magic Inc.</li>
+            <li><strong style="color:var(--text)">Email:</strong> <a href="mailto:support@proformamagic.com">support@proformamagic.com</a></li>
+            <li><strong style="color:var(--text)">Phone:</strong> 1-613-302-5752</li>
+            <li><strong style="color:var(--text)">Mail:</strong> 2 Barbara Ann Private, Ottawa, Ontario, Canada K2C 3V2</li>
+          </ul>
+          <p style="margin-top:24px;font-size:13px;color:var(--muted);font-style:italic">This Privacy Policy has been prepared in good faith in accordance with PIPEDA and applicable Canadian law. Users are encouraged to seek independent legal advice regarding their specific situation. Pro Forma Magic Inc. recommends this document be reviewed by qualified legal counsel before deployment.</p>
+        </section>
+
+      </div><!-- /panel-privacy -->
 
     </main>
   </div>
@@ -708,20 +782,14 @@ footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
 </footer>
 
 <script>
-// Mobile menu
+/* ── Mobile menu ── */
 function toggleMobileMenu(){
   var menu=document.getElementById('mobile-menu');
   menu.classList.toggle('open');
   document.body.style.overflow=menu.classList.contains('open')?'hidden':'';
 }
 
-// Nav already dark on this page — no scroll toggle needed
-var nav=document.getElementById('main-nav');
-window.addEventListener('scroll',function(){
-  nav.classList.toggle('scrolled',window.scrollY>60);
-});
-
-// Mobile TOC
+/* ── Mobile TOC ── */
 function toggleToc(){
   var btn=document.getElementById('toc-toggle');
   var list=document.getElementById('toc-list');
@@ -733,33 +801,135 @@ function closeToc(){
   document.getElementById('toc-list').classList.remove('open');
 }
 
-// Active sidebar link on scroll (desktop)
-(function(){
-  var sections=document.querySelectorAll('.terms-section[id]');
-  var links=document.querySelectorAll('#sidebar-links a');
-  if(!links.length) return;
+/* ── Document data ── */
+var DOCS = {
+  terms: {
+    title: 'Terms &amp; Conditions',
+    sections: [
+      {id:'t-introduction',   label:'Introduction'},
+      {id:'t-services',       label:'Description of Services'},
+      {id:'t-accounts',       label:'Account Registration'},
+      {id:'t-subscription',   label:'Subscription &amp; Pricing'},
+      {id:'t-cancellation',   label:'Cancellation &amp; Refunds'},
+      {id:'t-intellectual-property', label:'Intellectual Property'},
+      {id:'t-acceptable-use', label:'Acceptable Use'},
+      {id:'t-third-party',    label:'Third-Party Services'},
+      {id:'t-disclaimer',     label:'Disclaimer of Warranties'},
+      {id:'t-limitation',     label:'Limitation of Liability'},
+      {id:'t-indemnification',label:'Indemnification'},
+      {id:'t-governing-law',  label:'Governing Law'},
+      {id:'t-changes',        label:'Changes to Terms'},
+      {id:'t-contact',        label:'Contact Us'}
+    ]
+  },
+  privacy: {
+    title: 'Privacy Policy',
+    sections: [
+      {id:'p-overview',       label:'Overview &amp; Commitment'},
+      {id:'p-collection',     label:'Information We Collect'},
+      {id:'p-use',            label:'How We Use Your Information'},
+      {id:'p-casl',           label:'CASL &amp; Email Communications'},
+      {id:'p-disclosure',     label:'Disclosure of Information'},
+      {id:'p-retention',      label:'Data Retention'},
+      {id:'p-security',       label:'Security'},
+      {id:'p-international',  label:'International Users'},
+      {id:'p-cookies',        label:'Cookies'},
+      {id:'p-rights',         label:'Your Privacy Rights'},
+      {id:'p-changes',        label:'Changes to This Policy'},
+      {id:'p-contact',        label:'Contact Our Privacy Officer'}
+    ]
+  }
+};
 
-  function onScroll(){
-    var scrollY=window.scrollY+120;
-    var current='';
-    sections.forEach(function(s){
-      if(s.offsetTop<=scrollY) current=s.id;
-    });
-    links.forEach(function(a){
-      a.classList.toggle('active', a.getAttribute('href')==='#'+current);
+var currentDoc = 'terms';
+
+function buildSidebar(doc) {
+  var sidebar = document.getElementById('sidebar-links');
+  var mobileToc = document.getElementById('toc-list');
+  sidebar.innerHTML = '';
+  mobileToc.innerHTML = '';
+  DOCS[doc].sections.forEach(function(s, i) {
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = '#' + s.id;
+    a.innerHTML = s.label;
+    if (i === 0) a.classList.add('active');
+    li.appendChild(a);
+    sidebar.appendChild(li);
+
+    var mLi = document.createElement('li');
+    var mA = document.createElement('a');
+    mA.href = '#' + s.id;
+    mA.innerHTML = (i+1) + '. ' + s.label;
+    mA.onclick = closeToc;
+    mLi.appendChild(mA);
+    mobileToc.appendChild(mLi);
+  });
+}
+
+function switchDoc(doc) {
+  if (doc === currentDoc) return;
+  currentDoc = doc;
+
+  // Toggle tabs
+  document.getElementById('tab-terms').classList.toggle('active', doc === 'terms');
+  document.getElementById('tab-privacy').classList.toggle('active', doc === 'privacy');
+
+  // Toggle panels
+  document.getElementById('panel-terms').classList.toggle('active', doc === 'terms');
+  document.getElementById('panel-privacy').classList.toggle('active', doc === 'privacy');
+
+  // Update heading
+  document.getElementById('page-title').innerHTML = DOCS[doc].title;
+  document.title = (doc === 'terms' ? 'Terms & Conditions' : 'Privacy Policy') + ' | Pro Forma Magic';
+
+  // Rebuild sidebar
+  buildSidebar(doc);
+
+  // Scroll to top of content
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+/* ── Active sidebar on scroll ── */
+function setupScrollSpy() {
+  var links = document.querySelectorAll('#sidebar-links a');
+  if (!links.length) return;
+  var sections = [];
+  links.forEach(function(a) {
+    var id = a.getAttribute('href').replace('#','');
+    var el = document.getElementById(id);
+    if (el) sections.push(el);
+  });
+
+  function onScroll() {
+    var scrollY = window.scrollY + 120;
+    var current = sections[0] ? sections[0].id : '';
+    sections.forEach(function(s) { if (s.offsetTop <= scrollY) current = s.id; });
+    links.forEach(function(a) {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
     });
   }
-  window.addEventListener('scroll',onScroll,{passive:true});
+  window.removeEventListener('scroll', window._scrollSpy);
+  window._scrollSpy = onScroll;
+  window.addEventListener('scroll', onScroll, {passive: true});
   onScroll();
-})();
+}
 
-// Flodesk subscription
+// Init
+buildSidebar('terms');
+setupScrollSpy();
+
+// Re-setup scroll spy when doc switches (after buildSidebar)
+var origSwitch = switchDoc;
+switchDoc = function(doc) {
+  origSwitch(doc);
+  setTimeout(setupScrollSpy, 50);
+};
+
+/* ── Flodesk ── */
 function submitToFlodesk(){
   var email=document.getElementById('footer-email').value;
-  if(!email||!email.includes('@')){
-    document.getElementById('footer-email').focus();
-    return;
-  }
+  if(!email||!email.includes('@')){ document.getElementById('footer-email').focus(); return; }
   var container=document.getElementById('fd-form-6a285a6510a901be6e0f6940');
   var fdInput=container.querySelector('input[type="email"]');
   var fdBtn=container.querySelector('button[type="submit"]');
@@ -785,10 +955,7 @@ function submitToFlodesk(){
     sm.async=true;sm.type='text/javascript';
     sm.src=h+s+v;f.parentNode.insertBefore(sm,f);
   })(window,document,'script','https://assets.flodesk.com','/universal.js','fd');
-  window.fd('form',{
-    formId:'6a285a6510a901be6e0f6940',
-    containerEl:'#fd-form-6a285a6510a901be6e0f6940'
-  });
+  window.fd('form',{formId:'6a285a6510a901be6e0f6940',containerEl:'#fd-form-6a285a6510a901be6e0f6940'});
 </script>
 </body>
 </html>
