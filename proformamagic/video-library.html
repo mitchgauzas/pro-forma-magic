@@ -299,36 +299,6 @@ body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);overflow
   background:var(--text);color:#fff;
 }
 
-/* Pagination */
-.pagination{
-  display:flex;align-items:center;gap:4px;
-}
-.page-btn{
-  min-width:36px;height:36px;
-  display:flex;align-items:center;justify-content:center;
-  border:1.5px solid rgba(0,0,0,.14);
-  border-radius:8px;
-  padding:0 10px;
-  font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;
-  color:var(--muted);background:#fff;
-  cursor:pointer;transition:.2s;
-  text-decoration:none;
-}
-.page-btn:hover{border-color:var(--gold-btn);color:var(--gold-btn)}
-.page-btn.active{
-  background:var(--gold-btn);border-color:var(--gold-btn);
-  color:#fff;font-weight:700;
-}
-.page-btn.prev,.page-btn.next{
-  gap:6px;font-size:12.5px;letter-spacing:.3px;
-  padding:0 14px;
-}
-.page-ellipsis{
-  display:flex;align-items:center;justify-content:center;
-  min-width:36px;height:36px;
-  font-size:13px;color:var(--muted);
-}
-
 /* ── FOOTER ── */
 footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
 .footer-inner{max-width:1200px;margin:0 auto;padding:0 50px}
@@ -398,7 +368,6 @@ footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
   .video-grid{grid-template-columns:1fr;gap:20px}
 
   .below-grid{padding:0 20px 60px;gap:24px}
-  .pagination{flex-wrap:wrap;justify-content:center}
 
   .footer-top{grid-template-columns:1fr}
   .footer-contact-social{grid-template-columns:1fr}
@@ -671,22 +640,7 @@ footer{background:var(--dark3);padding:60px 0 36px;color:rgba(255,255,255,.65)}
 
 <!-- BELOW GRID -->
 <div class="below-grid">
-  <button class="btn-show-more" onclick="showMore()">SHOW MORE +</button>
-  <div class="pagination">
-    <button class="page-btn prev" onclick="goPage(currentPage-1)">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Previous
-    </button>
-    <button class="page-btn active" onclick="goPage(1)">1</button>
-    <button class="page-btn" onclick="goPage(2)">2</button>
-    <button class="page-btn" onclick="goPage(3)">3</button>
-    <span class="page-ellipsis">&hellip;</span>
-    <button class="page-btn" onclick="goPage(12)">12</button>
-    <button class="page-btn next" onclick="goPage(currentPage+1)">
-      Next
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-  </div>
+  <button class="btn-show-more" id="show-more-btn" onclick="showMore()" style="display:none">SHOW MORE +</button>
 </div>
 
 <!-- FOOTER -->
@@ -750,51 +704,63 @@ window.addEventListener('scroll',function(){
   nav.classList.toggle('scrolled',window.scrollY>60);
 });
 
-// Filter tabs
-var currentFilter='all';
-function setFilter(val,btn){
-  currentFilter=val;
-  document.querySelectorAll('.filter-tab').forEach(function(t){t.classList.remove('active')});
+// ── State ──
+var currentFilter = 'all';
+var visibleCount  = 9;   // how many cards are currently shown
+var PAGE_SIZE     = 9;   // cards per "page" of Show More
+
+// ── Filter tabs ──
+function setFilter(val, btn) {
+  currentFilter = val;
+  visibleCount  = PAGE_SIZE; // reset to first page on filter change
+  document.querySelectorAll('.filter-tab').forEach(function(t){ t.classList.remove('active'); });
   btn.classList.add('active');
   filterVideos();
 }
 
-function filterVideos(){
-  var query=document.getElementById('search-input').value.toLowerCase();
-  document.querySelectorAll('#video-grid .video-card').forEach(function(card){
-    var cat=card.dataset.category||'';
-    var title=card.querySelector('.video-card-title').textContent.toLowerCase();
-    var matchFilter=(currentFilter==='all'||cat===currentFilter);
-    var matchSearch=(query===''||title.includes(query));
-    card.style.display=(matchFilter&&matchSearch)?'':'none';
+// ── Core filter + show-more logic ──
+function filterVideos() {
+  var query   = document.getElementById('search-input').value.toLowerCase();
+  var cards   = Array.from(document.querySelectorAll('#video-grid .video-card'));
+  var matched = [];
+
+  cards.forEach(function(card) {
+    card.style.display = 'none';
+    var cat   = card.dataset.category || '';
+    var title = card.querySelector('.video-card-title').textContent.toLowerCase();
+    var matchFilter = (currentFilter === 'all' || cat === currentFilter);
+    var matchSearch = (query === '' || title.includes(query));
+    if (matchFilter && matchSearch) matched.push(card);
   });
-}
 
-// Sort (placeholder — real sort would reorder cards server-side)
-function sortVideos(val){
-  // placeholder: could reorder DOM cards by data attribute when real data exists
-}
-
-// Show more (placeholder)
-function showMore(){
-  // placeholder: load next page of results
-}
-
-// Pagination
-var currentPage=1;
-function goPage(p){
-  if(p<1||p>12)return;
-  currentPage=p;
-  document.querySelectorAll('.page-btn:not(.prev):not(.next)').forEach(function(btn){
-    btn.classList.toggle('active',btn.textContent.trim()==String(p));
+  // Show only up to visibleCount matched cards
+  matched.forEach(function(card, i) {
+    card.style.display = (i < visibleCount) ? '' : 'none';
   });
-  window.scrollTo({top:0,behavior:'smooth'});
+
+  // Show the SHOW MORE button only if there are hidden matched cards beyond visibleCount
+  var showMoreBtn = document.getElementById('show-more-btn');
+  showMoreBtn.style.display = (matched.length > visibleCount) ? '' : 'none';
 }
 
-// Open video (placeholder)
-function openVideo(card){
+// ── Show More ──
+function showMore() {
+  visibleCount += PAGE_SIZE;
+  filterVideos();
+}
+
+// ── Sort (placeholder — reorder DOM when real data arrives) ──
+function sortVideos(val) {
+  // real implementation: sort cards array by data-date or data-views attribute, then re-append
+}
+
+// ── Open video (placeholder) ──
+function openVideo(card) {
   // When video URLs are added, open a modal or navigate here
 }
+
+// ── Init ──
+filterVideos();
 </script>
 
 <!-- Flodesk -->
